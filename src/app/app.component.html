@@ -19,27 +19,36 @@
             </div>
             <div class="form-group">
               <label for="lombar">Dor Lombar</label>
-              <input name="lombar" ngModel type="text" class="form-control" id="lombar">
+              <input name="dorLombar" ngModel type="text" class="form-control" id="lombar">
               <small id="lombarHelp" class="form-text text-muted">Resposta yes/no</small>
             </div>
             <div class="form-group">
               <label for="urinando">Urinando Muito</label>
-              <input name="urinando" ngModel type="text" class="form-control" id="urinando">
+              <input name="urinandoMuito" ngModel type="text" class="form-control" id="urinando">
               <small id="urinandoHelp" class="form-text text-muted">Resposta yes/no</small>
             </div>
             <div class="form-group">
               <label for="dorUrinando">Dor ao Urinar</label>
-              <input name="dorUrinando" ngModel type="text" class="form-control" id="dorUrinando">
+              <input name="dorAoUrinar" ngModel type="text" class="form-control" id="dorUrinando">
               <small id="dorUrinandoHelp" class="form-text text-muted">Resposta yes/no</small>
             </div>
             <div class="form-group">
               <label for="queimacaoUretra">Queimação na uretra</label>
-              <input name="queimacaoUretra" ngModel type="text" class="form-control" id="queimacaoUretra">
+              <input name="queimacaoNaUretra" ngModel type="text" class="form-control" id="queimacaoUretra">
               <small id="queimacaoUretraHelp" class="form-text text-muted">Resposta yes/no</small>
             </div>
             <br>
             <button  type="submit" class="btn btn-primary col-md-12">Submit</button>
           </form>
+          <br>
+          <div *ngIf="submitSucesso()" id="submitSucesso" class="alert alert-success" role="alert">
+            <strong>Probabilidade inflamação no rim: </strong>{{inflaRim}}.
+            <br>
+            <strong>Probabilidade inflamação na bexiga: </strong> {{inflaBexiga}}.
+          </div>
+          <div *ngIf="submitErro()" id="submitErro" class="alert alert-success" role="alert">
+            <strong>Erro ao chamar Api!! Tente novamente mais tarde.</strong>
+          </div>
         </div>
       </div>
       <br>
