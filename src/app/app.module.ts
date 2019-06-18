@@ -5,6 +5,7 @@ import {PredictHealthApiService} from './services/predict-health-api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'app', component: AppComponent}])
   ],
   providers: [PredictHealthApiService],
   bootstrap: [AppComponent]
