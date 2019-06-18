@@ -1,21 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
 <router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="jumbotron col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="display-8">Predict Health</h4>
+          <br>
+          <form #formPredictHealth="ngForm" (ngSubmit)="onSubmit(formPredictHealth.value)" novalidate>
+            <div class="form-group">
+              <label for="temperatura">Temperatura</label>
+              <input name="temperatura" ngModel type="text" class="form-control" id="temperatura">
+            </div>
+            <div class="form-group">
+              <label for="nausea">Naúsea</label>
+              <input name="nausea" ngModel type="text" class="form-control" id="nausea">
+              <small id="nauseaHelp" class="form-text text-muted">Resposta yes/no</small>
+            </div>
+            <div class="form-group">
+              <label for="lombar">Dor Lombar</label>
+              <input name="lombar" ngModel type="text" class="form-control" id="lombar">
+              <small id="lombarHelp" class="form-text text-muted">Resposta yes/no</small>
+            </div>
+            <div class="form-group">
+              <label for="urinando">Urinando Muito</label>
+              <input name="urinando" ngModel type="text" class="form-control" id="urinando">
+              <small id="urinandoHelp" class="form-text text-muted">Resposta yes/no</small>
+            </div>
+            <div class="form-group">
+              <label for="dorUrinando">Dor ao Urinar</label>
+              <input name="dorUrinando" ngModel type="text" class="form-control" id="dorUrinando">
+              <small id="dorUrinandoHelp" class="form-text text-muted">Resposta yes/no</small>
+            </div>
+            <div class="form-group">
+              <label for="queimacaoUretra">Queimação na uretra</label>
+              <input name="queimacaoUretra" ngModel type="text" class="form-control" id="queimacaoUretra">
+              <small id="queimacaoUretraHelp" class="form-text text-muted">Resposta yes/no</small>
+            </div>
+            <br>
+            <button  type="submit" class="btn btn-primary col-md-12">Submit</button>
+          </form>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
