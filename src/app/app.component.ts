@@ -10,6 +10,8 @@ import {PredictHealthApiService} from './services/predict-health-api.service';
 export class AppComponent {
   inflaRim = 0;
   inflaBexiga = 0;
+  scoreLabelRim= '';
+  scoreLabelBexiga= '';
   sucesso = false;
   erro = false;
   predictHealthService;
@@ -19,13 +21,17 @@ export class AppComponent {
   onSubmit(form) {
     this.inflaRim = 0;
     this.inflaBexiga = 0;
+    this.scoreLabelRim= '';
+    this.scoreLabelBexiga= '';
     this.sucesso = false;
     this.erro = false
     console.log(form);
     this.predictHealthService.submitForm(form).subscribe((data) => {
       console.log(data);
-      this.inflaRim = data.Results.inflaBexiga[0]["Scored Probabilities"];
-      this.inflaBexiga = data.Results.inflaRim[0]["Scored Probabilities"];
+      this.inflaRim = data.Results.inflaRim[0]["Scored Probabilities"];
+      this.scoreLabelRim = data.Results.inflaRim[0]["Scored Labels"];
+      this.inflaBexiga = data.Results.inflaBexiga[0]["Scored Probabilities"];
+      this.scoreLabelBexiga = data.Results.inflaBexiga[0]["Scored Labels"];
       this.sucesso = true;
     }, (error) => {
       console.log(error);

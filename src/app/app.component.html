@@ -41,10 +41,16 @@
             <button  type="submit" class="btn btn-primary col-md-12">Submit</button>
           </form>
           <br>
-          <div *ngIf="submitSucesso()" id="submitSucesso" class="alert alert-success" role="alert">
-            <strong>Probabilidade inflamação no rim: </strong>{{inflaRim}}.
+          <div *ngIf="submitSucesso()" id="submitSucessoRim" class="alert alert-success" role="alert">
+            <strong>É possível ser inflamação no rim? </strong>{{scoreLabelRim}}.
             <br>
-            <strong>Probabilidade inflamação na bexiga: </strong> {{inflaBexiga}}.
+            <strong>Probabilidade de acerto: </strong>{{inflaRim}}.
+          </div>
+          <br>
+          <div *ngIf="submitSucesso()" id="submitSucessoBexiga" class="alert alert-success" role="alert">
+            <strong>É possível ser inflamação na bexiga? </strong>{{scoreLabelBexiga}}.
+            <br>
+            <strong>Probabilidade de acerto: </strong>{{inflaBexiga}}.
           </div>
           <div *ngIf="submitErro()" id="submitErro" class="alert alert-success" role="alert">
             <strong>Erro ao chamar Api!! Tente novamente mais tarde.</strong>
