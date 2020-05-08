@@ -7,9 +7,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class PredictHealthApiService {
   constructor(private http: HttpClient) { }
   submitForm(payload) {
-    const url = 'http://feiraback.herokuapp.com/feira-app/api/feiras/cadastro';
+    const url = 'http://localhost:8089/feira-app/api/feiras/cadastro';
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json');
     return this.http.post(url, payload ,{headers});
   }
 }
+
+
+
