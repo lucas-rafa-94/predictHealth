@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~8.0.1",
+    "@angular/animations": "^9.1.6",
     "@angular/common": "~8.0.1",
     "@angular/compiler": "~8.0.1",
     "@angular/core": "~8.0.1",
@@ -23,6 +23,7 @@
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
+    "ngx-spinner": "^8.0.3",
     "path": "^0.12.7",
     "popper": "^1.0.1",
     "rxjs": "~6.4.0",

@@ -1,57 +1,66 @@
 <!--<router-outlet></router-outlet>-->
+<ngx-spinner></ngx-spinner>
 <div class="container">
   <div class="row">
     <div class="col-md-2"></div>
     <div class="jumbotron col-md-8">
       <div class="row">
         <div class="col-md-12">
-          <h4 class="display-8">Predict Health</h4>
+          <h4 class="display-8">Feira App</h4>
+          <br>
+          <h4 class="display-8">Dados Pessoais</h4>
           <br>
           <form #formPredictHealth="ngForm" (ngSubmit)="onSubmit(formPredictHealth.value)" novalidate>
             <div class="form-group">
-              <label for="temperatura">Temperatura</label>
-              <input name="temperatura" ngModel type="text" class="form-control" id="temperatura">
+              <label for="nomeCompleto">Nome completo ou Razão Social (obrigatório)</label>
+              <input name="nomeCompleto" ngModel type="text" class="form-control" id="nomeCompleto">
             </div>
             <div class="form-group">
-              <label for="nausea">Naúsea</label>
-              <input name="nausea" ngModel type="text" class="form-control" id="nausea">
-              <small id="nauseaHelp" class="form-text text-muted">Resposta yes/no</small>
+              <label for="endereco">Endereço (obrigatório)</label>
+              <input name="endereco" ngModel type="text" class="form-control" id="endereco">
             </div>
             <div class="form-group">
-              <label for="lombar">Dor Lombar</label>
-              <input name="dorLombar" ngModel type="text" class="form-control" id="lombar">
-              <small id="lombarHelp" class="form-text text-muted">Resposta yes/no</small>
+              <label for="dataNascimento">Data de Nascimento (obrigatório)</label>
+              <input name="dataNascimento" ngModel type="text" class="form-control" id="dataNascimento">
             </div>
             <div class="form-group">
-              <label for="urinando">Urinando Muito</label>
-              <input name="urinandoMuito" ngModel type="text" class="form-control" id="urinando">
-              <small id="urinandoHelp" class="form-text text-muted">Resposta yes/no</small>
+              <label for="celular">Celular (Whatsapp) (obrigatório)</label>
+              <input name="celular" ngModel type="text" class="form-control" id="celular">
+              <small id="celularHelp" class="form-text text-muted">Requerido formato do número de telefone: (##) #####-####</small>
             </div>
             <div class="form-group">
-              <label for="dorUrinando">Dor ao Urinar</label>
-              <input name="dorAoUrinar" ngModel type="text" class="form-control" id="dorUrinando">
-              <small id="dorUrinandoHelp" class="form-text text-muted">Resposta yes/no</small>
-            </div>
-            <div class="form-group">
-              <label for="queimacaoUretra">Queimação na uretra</label>
-              <input name="queimacaoNaUretra" ngModel type="text" class="form-control" id="queimacaoUretra">
-              <small id="queimacaoUretraHelp" class="form-text text-muted">Resposta yes/no</small>
+              <label for="email">Email (obrigatório)</label>
+              <input name="email" ngModel type="text" class="form-control" id="email">
             </div>
             <br>
-            <button  type="submit" class="btn btn-primary col-md-12">Submit</button>
+            <h4 class="display-8">Dados Banca</h4>
+            <br>
+            <div class="form-group">
+              <label for="produtos">Produtos comercializados (obrigatório)</label>
+              <input name="produtos" ngModel type="text" class="form-control" id="produtos">
+              <small id="produtosHelp" class="form-text text-muted">Frutas, Legumes, Verduras, temperos ou outros.</small>
+            </div>
+            <div class="form-group">
+              <label for="produtorOuRevendedor">Produtor ou Revendedor (obrigatório)</label>
+              <input name="produtorOuRevendedor" ngModel type="text" class="form-control" id="produtorOuRevendedor">
+            </div>
+            <div class="form-group">
+              <label for="barracas">Quantidade de barracas por Feira (obrigatório)</label>
+              <input name="barracas" ngModel type="text" class="form-control" id="barracas">
+            </div>
+            <div class="form-group">
+              <label for="dias">Dia da semana que faz feira</label>
+              <input name="dias" ngModel type="text" class="form-control" id="dias">
+              <small id="diasHelp" class="form-text text-muted">Segunda, Terça, Quarta e etc.</small>
+            </div>
+            <br>
+            <button  type="submit" class="btn btn-primary col-md-12">Enviar Cadastro</button>
           </form>
           <br>
           <div *ngIf="submitSucesso()" id="submitSucessoRim" class="alert alert-success" role="alert">
-            <strong>É possível ser inflamação no rim? </strong>{{scoreLabelRim}}.
-            <br>
-            <strong>Probabilidade de acerto: </strong>{{inflaRim}}.
+            <strong>Cadastro Realizado com Sucesso!</strong>
           </div>
           <br>
-          <div *ngIf="submitSucesso()" id="submitSucessoBexiga" class="alert alert-success" role="alert">
-            <strong>É possível ser inflamação na bexiga? </strong>{{scoreLabelBexiga}}.
-            <br>
-            <strong>Probabilidade de acerto: </strong>{{inflaBexiga}}.
-          </div>
           <div *ngIf="submitErro()" id="submitErro" class="alert alert-success" role="alert">
             <strong>Erro ao chamar Api!! Tente novamente mais tarde.</strong>
           </div>
